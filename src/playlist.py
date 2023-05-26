@@ -39,15 +39,15 @@ class PlayList:
             total_duration += video_duration
         return total_duration
 
-    @property
+
     def show_best_video(self):
         '''Возвращает ссылку на самое популярное видео из плейлиста (по количеству лайков)'''
 
-        best_video_id = 0
         best_like = 0
         for video in self.video_response['items']:
             video_id = video['id']
             like_count = video['statistics']['likeCount']
             if int(like_count) > best_like:
                 best_video_id = video_id
-        return f'https://youtu.be/{best_video_id}'
+                best_video_url = 'https://youtu.be/' + best_video_id
+        return best_video_url
