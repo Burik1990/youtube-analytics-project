@@ -53,13 +53,6 @@ class Channel:
         return self.subscriber_count > other.subscriber_count
 
 
-
-
-
-
-
-
-
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале."""
         print(json.dumps(self.channel, indent=2, ensure_ascii=False))
